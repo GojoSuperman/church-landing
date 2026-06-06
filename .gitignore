@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# secrets (절대 커밋 금지)
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.claude/.credentials.json
+*.pem
+*.key
+
+# 비주얼 컴패니언 (브레인스토밍 산출물)
+.superpowers/
+
+# build / OS
+dist/
+.DS_Store
+Thumbs.db
+*.log
