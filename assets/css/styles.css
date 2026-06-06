@@ -13,3 +13,10 @@ body{ margin:0; background:var(--c-bg); color:var(--c-fg);
   line-height:1.7; font-size:1rem; }
 img{ max-width:100%; height:auto; display:block; }
 a{ color:inherit; }
+.topbar{ position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:10px;
+  background:var(--c-surface); border-bottom:1px solid var(--c-line); padding:.6rem .9rem; }
+.brand{ display:flex; align-items:center; gap:.5rem; font-weight:700; }
+.fontscale{ margin-left:auto; display:flex; gap:.3rem; }
+.fontscale button{ border:1px solid var(--c-line); background:#fff; border-radius:999px;
+  padding:.4rem .8rem; font-size:.95rem; min-height:44px; cursor:pointer; }
+.fontscale button[aria-pressed="true"]{ background:var(--c-primary); color:#fff; border-color:var(--c-primary); }

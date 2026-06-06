@@ -9,8 +9,21 @@
 </head>
 <body>
   <main id="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="/assets/img/app-icon.png" alt="교회 재정 관리 앱 아이콘" width="32" height="32">
+        <span>교회 재정 관리</span>
+      </div>
+      <div class="fontscale" role="group" aria-label="글자 크기">
+        <button data-scale-btn="normal" aria-pressed="true">보통</button>
+        <button data-scale-btn="large" aria-pressed="false">큰 글자</button>
+      </div>
+    </header>
     <p>로딩…</p>
   </main>
-  <script type="module" src="/assets/js/config.js"></script>
+  <script type="module">
+    import { initFontScale } from "/assets/js/fontscale.js";
+    initFontScale();
+  </script>
 </body>
 </html>
