@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>교회 재정 관리 — 카톡 공유 카드</title>
+<style>
+  :root{ --green:#2f6f4f; --green2:#3f8a63; --green-d:#1f4d36; --ink:#1f2933; --muted:#5b6a78; --soft:#eef6f1; }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{ background:#cfd8e0; font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    color:var(--ink); display:flex; justify-content:center; padding:24px; }
+  /* 카톡 공유용 세로 카드 (캡처해서 전송) */
+  .card{ width:600px; background:#fff; border-radius:30px; overflow:hidden;
+    box-shadow:0 18px 50px rgba(20,40,30,.28); }
+  .hero{ background:linear-gradient(160deg,var(--green2),var(--green-d)); color:#fff; padding:40px 38px 34px; text-align:center; }
+  .hero .brand{ display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,.16);
+    padding:8px 16px 8px 8px; border-radius:999px; margin-bottom:22px; }
+  .hero .brand img{ width:44px; height:44px; border-radius:12px; background:#fff; }
+  .hero .brand span{ font-weight:700; font-size:17px; }
+  .hero h1{ font-size:42px; line-height:1.2; letter-spacing:-1.2px; }
+  .hero h1 b{ color:#ffe9a8; }
+  .hero p{ margin-top:12px; font-size:18px; opacity:.95; }
+  .body{ padding:30px 38px 14px; }
+  .shot{ text-align:center; margin-bottom:24px; }
+  .shot img{ width:230px; border-radius:20px; box-shadow:0 12px 30px rgba(0,0,0,.18); }
+  .chips{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .chips div{ background:var(--soft); border:1px solid #cfe6d8; border-radius:14px; padding:14px 16px;
+    font-weight:700; font-size:16px; color:var(--green-d); }
+  .chips .e{ font-size:20px; margin-right:6px; }
+  .cta{ margin:26px 0 4px; text-align:center; }
+  .cta .lead{ font-size:18px; font-weight:700; margin-bottom:12px; }
+  .cta .lead b{ color:var(--green); }
+  .linkpill{ display:block; background:var(--green); color:#fff; text-decoration:none; font-weight:800;
+    font-size:20px; padding:18px 20px; border-radius:16px; letter-spacing:.2px; }
+  .linkpill small{ display:block; font-weight:600; font-size:15px; opacity:.92; margin-top:4px; }
+  .note{ text-align:center; color:var(--muted); font-size:14px; padding:16px 0 30px; }
+  .note b{ color:var(--green-d); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="hero">
+      <div class="brand"><img src="/assets/img/app-icon.png" alt="앱 아이콘"><span>교회 재정 관리</span></div>
+      <h1>교회 재정,<br><b>쉽고 투명하게</b></h1>
+      <p>목사님과 회계 직분자를 위한<br>교회 전용 재정 관리 앱</p>
+    </div>
+    <div class="body">
+      <div class="shot"><img src="/assets/img/screen-main.png" alt="앱 메인 화면"></div>
+      <div class="chips">
+        <div><span class="e">👍</span>쉽고 직관적</div>
+        <div><span class="e">⛪</span>한국 교회 특화</div>
+        <div><span class="e">🔒</span>데이터 안전·투명</div>
+        <div><span class="e">🆓</span>설치 무료</div>
+      </div>
+      <div class="cta">
+        <p class="lead">👇 아래 링크를 눌러 <b>무료로 설치</b>하세요</p>
+        <a class="linkpill" href="https://church-accounting-landing.netlify.app/">church-accounting-landing.netlify.app
+          <small>Google Play 무료 설치 · 안드로이드 폰</small></a>
+      </div>
+      <p class="note">설치는 <b>안드로이드 폰</b>에서 진행됩니다 (아이폰은 소개만 열람)</p>
+    </div>
+  </div>
+</body>
+</html>
