@@ -43,3 +43,14 @@ main{ max-width:var(--maxw); margin:0 auto; }
 .hero-shot{ margin:0 auto; max-width:280px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.12); }
 h2{ font-size:1.35rem; margin:0 0 .7rem; }
 .free-note{ background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; padding:.7rem .9rem; border-radius:10px; }
+.grid2{ list-style:none; padding:0; margin:0; display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
+.grid2 li{ background:var(--c-surface); border:1px solid var(--c-line); border-radius:12px; padding:1rem .9rem; }
+.grid2 .ico{ font-size:1.6rem; }
+.grid2 b{ display:block; margin:.4rem 0 .2rem; }
+.grid2 p{ margin:0; color:var(--c-muted); font-size:.95rem; }
+.feature{ display:flex; gap:1rem; align-items:center; background:var(--c-surface);
+  border:1px solid var(--c-line); border-radius:12px; padding:1rem; margin-bottom:.9rem; }
+.feature img{ width:110px; border-radius:10px; flex:0 0 auto; }
+.feature b{ display:block; margin-bottom:.25rem; }
+.feature p{ margin:0; color:var(--c-muted); font-size:.95rem; }
+@media (max-width:360px){ .grid2{ grid-template-columns:1fr; } }
