@@ -1,0 +1,15 @@
+/* assets/css/styles.css */
+:root{
+  --c-bg:#f6f8fb; --c-surface:#ffffff; --c-fg:#1f2933; --c-muted:#52606d;
+  --c-line:#e4e7eb; --c-primary:#2f6f4f; --c-primary-d:#245c40; --c-accent:#2563eb;
+  --radius:14px; --maxw:560px;
+  --fs-base:17px;            /* 보통 */
+}
+html[data-fontscale="large"]{ --fs-base:21px; }  /* 시니어: 전체 rem 스케일 확대 */
+html{ font-size:var(--fs-base); -webkit-text-size-adjust:100%; }
+*{ box-sizing:border-box; }
+body{ margin:0; background:var(--c-bg); color:var(--c-fg);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  line-height:1.7; font-size:1rem; }
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; }
