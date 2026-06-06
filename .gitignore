@@ -18,3 +18,12 @@ dist/
 .DS_Store
 Thumbs.db
 *.log
+
+# supabase CLI 로컬 산출물
+supabase/
+
+# netlify 배포 폴더
+.netlify-publish/
+
+# Local Netlify folder
+.netlify

@@ -681,13 +681,12 @@ git commit -m "feat(landing): 마지막 CTA + 푸터 + 메타/OG/파비콘"
 - 하단 설치 바가 콘텐츠를 가리지 않음(`body` 하단 패딩)
 - 폼: 필수/동의 검증, 정상 전송 1건 DB 기록, 허니팟 채우면 무시
 
-- [ ] **Step 2: 배포(택1)**
+- [ ] **Step 2: 배포 — Netlify(확정)**
 
-옵션 A(권장, Netlify — 지금 비어있음):
-Run: `npx netlify-cli deploy --dir . --prod` (사이트 생성/연결)
-옵션 B(Vercel):
-Run: `npx vercel --prod`
-Expected: 공개 URL 확보(예: `https://church-...netlify.app`).
+Run: `npx netlify-cli deploy --dir . --prod` (최초 1회 사이트 생성/연결 프롬프트)
+배포 시점에 Netlify Starter 약관·한도 한 번 확인. (정적 사이트·상업적 사용 허용)
+Expected: 공개 URL 확보(예: `https://church-accounting.netlify.app`).
+(대안 필요 시에만 Vercel: `npx vercel --prod` — 단 Hobby 비상업 약관 유의.)
 
 - [ ] **Step 3: 배포 URL에서 재확인** — HTTPS 접속, 폼 전송 1건 정상, iOS/안드로이드 동작.
 
