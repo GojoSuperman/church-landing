@@ -34,3 +34,12 @@ body{ padding-bottom:84px; }  /* 하단바 가림 방지 */
   background:#1f2933; color:#fff; padding:.8rem 1rem; border-radius:10px; max-width:90vw;
   opacity:0; pointer-events:none; transition:.25s; z-index:40; font-size:.95rem; text-align:center; }
 .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+main{ max-width:var(--maxw); margin:0 auto; }
+.section{ padding:1.8rem 1.1rem; }
+.hero{ padding:1.6rem 1.1rem .4rem; text-align:center; }
+.hero h1{ font-size:1.9rem; line-height:1.25; margin:.2rem 0 .6rem; }
+.hero .lead{ color:var(--c-muted); margin:0 0 1.1rem; }
+.hero-cta{ margin:0 auto 1.3rem; max-width:340px; }
+.hero-shot{ margin:0 auto; max-width:280px; border-radius:18px; box-shadow:0 10px 30px rgba(0,0,0,.12); }
+h2{ font-size:1.35rem; margin:0 0 .7rem; }
+.free-note{ background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; padding:.7rem .9rem; border-radius:10px; }
