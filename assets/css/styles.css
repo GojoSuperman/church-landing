@@ -20,3 +20,17 @@ a{ color:inherit; }
 .fontscale button{ border:1px solid var(--c-line); background:#fff; border-radius:999px;
   padding:.4rem .8rem; font-size:.95rem; min-height:44px; cursor:pointer; }
 .fontscale button[aria-pressed="true"]{ background:var(--c-primary); color:#fff; border-color:var(--c-primary); }
+.ios-banner{ background:#fff7ed; color:#9a3412; border-bottom:1px solid #fed7aa;
+  padding:.7rem .9rem; font-size:.95rem; text-align:center; }
+.install-bar{ position:fixed; left:0; right:0; bottom:0; z-index:30;
+  background:var(--c-surface); border-top:1px solid var(--c-line);
+  padding:.7rem .9rem calc(.7rem + env(safe-area-inset-bottom)); display:flex; }
+.btn-install{ flex:1; text-align:center; background:var(--c-primary); color:#fff; text-decoration:none;
+  font-weight:700; font-size:1.05rem; padding:.95rem 1rem; border-radius:12px; min-height:52px;
+  display:flex; align-items:center; justify-content:center; }
+.btn-install:active{ background:var(--c-primary-d); }
+body{ padding-bottom:84px; }  /* 하단바 가림 방지 */
+.toast{ position:fixed; left:50%; bottom:92px; transform:translateX(-50%) translateY(12px);
+  background:#1f2933; color:#fff; padding:.8rem 1rem; border-radius:10px; max-width:90vw;
+  opacity:0; pointer-events:none; transition:.25s; z-index:40; font-size:.95rem; text-align:center; }
+.toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }

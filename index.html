@@ -19,11 +19,18 @@
         <button data-scale-btn="large" aria-pressed="false">큰 글자</button>
       </div>
     </header>
+    <div class="ios-banner" data-ios-only hidden>
+      📱 아이폰에서는 <b>소개만</b> 보실 수 있어요. 설치는 <b>안드로이드 폰</b>에서 진행해 주세요.
+    </div>
     <p>로딩…</p>
   </main>
+  <div class="install-bar">
+    <a class="btn-install" data-install href="#">📲 구글 플레이에서 설치하기</a>
+  </div>
   <script type="module">
     import { initFontScale } from "/assets/js/fontscale.js";
-    initFontScale();
+    import { initPlatform } from "/assets/js/platform.js";
+    initFontScale(); initPlatform();
   </script>
 </body>
 </html>
