@@ -61,3 +61,15 @@ h2{ font-size:1.35rem; margin:0 0 .7rem; }
 .faq details{ background:var(--c-surface); border:1px solid var(--c-line); border-radius:10px; padding:.4rem .9rem; margin-bottom:.6rem; }
 .faq summary{ cursor:pointer; font-weight:600; padding:.5rem 0; min-height:44px; display:flex; align-items:center; }
 .faq p{ margin:.2rem 0 .8rem; color:var(--c-muted); }
+.lead-form form{ display:grid; gap:.8rem; }
+.lead-form label{ display:grid; gap:.35rem; font-weight:600; }
+.lead-form input, .lead-form select{ font:inherit; padding:.8rem .9rem; border:1px solid var(--c-line);
+  border-radius:10px; min-height:48px; background:#fff; }
+.lead-form .req{ color:#dc2626; }
+.consent{ grid-template-columns:auto 1fr; align-items:start; font-weight:400; font-size:.92rem; color:var(--c-muted); }
+.consent input{ min-height:auto; width:22px; height:22px; margin-top:.2rem; }
+.hp{ position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+.btn-submit{ background:var(--c-accent); color:#fff; border:0; border-radius:12px; padding:.95rem;
+  font-size:1.05rem; font-weight:700; min-height:52px; cursor:pointer; }
+.form-msg{ margin:.3rem 0 0; min-height:1.4em; }
+.form-msg.ok{ color:#065f46; } .form-msg.err{ color:#b91c1c; }
