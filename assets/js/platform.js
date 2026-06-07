@@ -52,7 +52,7 @@ function applyLockState(){
 
 // 미등록 상태에서 설치를 누르면: 안내 + 관심등록 폼으로 스크롤·강조
 function promptRegister(){
-  showToast(REGISTER_MSG);
+  showToast(REGISTER_MSG, true);
   const form = document.querySelector(".lead-form");
   if(!form) return;
   form.scrollIntoView({ behavior:"smooth", block:"start" });
@@ -61,10 +61,10 @@ function promptRegister(){
   form.classList.add("flash");
 }
 
-function showToast(message){
+function showToast(message, nowrap=false){
   let n = document.getElementById("app-toast");
   if(!n){ n = document.createElement("div"); n.id="app-toast"; n.className="toast"; document.body.appendChild(n); }
-  n.textContent = message; n.classList.add("show");
+  n.textContent = message; n.classList.toggle("nowrap", nowrap); n.classList.add("show");
   clearTimeout(n._t);
   n._t = setTimeout(()=>n.classList.remove("show"), 4000);
 }
