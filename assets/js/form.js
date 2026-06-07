@@ -1,12 +1,17 @@
 // assets/js/form.js
-import { SUPABASE_URL, SUPABASE_ANON_KEY } from "/assets/js/config.js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY, PLAY_URL } from "/assets/js/config.js";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+const LS_KEY = "lead_registered"; // 관심등록 완료 플래그(platform.js 와 동일 키)
 
 export function initLeadForm(){
   const form = document.getElementById("leadForm");
   if(!form) return;
   const msg = document.getElementById("formMsg");
   const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // 이미 등록한 폰(재방문): 관심등록 폼만 잠금. 스토어 버튼은 platform.js 가 활성 유지.
+  if(localStorage.getItem(LS_KEY) === "1"){ lockForm(); }
 
   // 전화번호 자동 하이픈
   const phoneInput = form.querySelector("input[name=phone]");
@@ -81,9 +86,38 @@ export function initLeadForm(){
     form.reset();
     // reset 후 custom domain 인풋 다시 숨김
     if(domainCustom) domainCustom.hidden = true;
-    msg.textContent = "등록되었습니다. 감사합니다 🙏";
-    msg.classList.add("ok");
+    // 관심등록 완료 → 설치 버튼 잠금 해제 (재방문에도 유지) + 폼 잠금
+    localStorage.setItem(LS_KEY, "1");
+    document.dispatchEvent(new CustomEvent("lead:registered"));
+    lockForm();
+    // 감사 모달 표시 후 구글스토어로 자동 이동
+    showRedirectModal();
+    setTimeout(()=>{ window.location.href = PLAY_URL; }, 1500);
   });
 
   function fail(t){ msg.textContent = t; msg.classList.add("err"); }
+
+  // 재방문/등록완료: 폼 입력을 비활성화하고 완료 안내를 표시
+  function lockForm(){
+    form.querySelectorAll("input, select, textarea, button").forEach(el=>{ el.disabled = true; });
+    form.classList.add("is-done");
+    const section = form.closest(".lead-form") || form.parentElement;
+    if(section && !section.querySelector(".lead-done-note")){
+      const note = document.createElement("p");
+      note.className = "lead-done-note";
+      note.textContent = "이미 관심 등록을 완료하셨어요 🙏 설치가 아직이라면 ‘구글 플레이’ 버튼으로 바로 설치하실 수 있어요.";
+      section.insertBefore(note, form);
+    }
+  }
+}
+
+// 등록 완료 → "구글스토어로 이동" 안내 모달
+function showRedirectModal(){
+  const ov = document.createElement("div");
+  ov.className = "modal-overlay";
+  ov.innerHTML = '<div class="modal" role="alertdialog" aria-live="assertive">'
+    + '<p class="modal-title">감사합니다 🙏</p>'
+    + '<p class="modal-desc">구글스토어로 바로 이동합니다…</p></div>';
+  document.body.appendChild(ov);
+  requestAnimationFrame(()=> ov.classList.add("show"));
 }

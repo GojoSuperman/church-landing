@@ -29,6 +29,23 @@ a{ color:inherit; }
   font-weight:700; font-size:1.05rem; padding:.95rem 1rem; border-radius:12px; min-height:52px;
   display:flex; align-items:center; justify-content:center; }
 .btn-install:active{ background:var(--c-primary-d); }
+/* 관심등록 전: 설치 버튼 비활성(흐림) — 클릭하면 폼으로 유도 */
+.btn-install.locked{ opacity:.55; filter:grayscale(.35); }
+/* 설치 클릭 시 관심등록 폼 강조 */
+.lead-form.flash{ animation:leadflash 1.6s ease; border-radius:14px; }
+@keyframes leadflash{
+  0%,100%{ box-shadow:0 0 0 0 rgba(15,118,80,0); }
+  20%    { box-shadow:0 0 0 4px var(--c-accent); }
+}
+/* 등록 완료 → 구글스토어 이동 안내 모달 */
+.modal-overlay{ position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center;
+  background:rgba(15,23,32,.55); padding:1.5rem; opacity:0; transition:opacity .2s; }
+.modal-overlay.show{ opacity:1; }
+.modal{ background:#fff; border-radius:16px; padding:1.7rem 1.8rem; max-width:340px; width:100%; text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.3); transform:translateY(10px); transition:transform .2s; }
+.modal-overlay.show .modal{ transform:translateY(0); }
+.modal-title{ margin:0 0 .45rem; font-size:1.25rem; font-weight:800; color:var(--c-primary); }
+.modal-desc{ margin:0; font-size:1rem; color:var(--c-muted); }
 body{ padding-bottom:84px; }  /* 하단바 가림 방지 */
 .toast{ position:fixed; left:50%; bottom:92px; transform:translateX(-50%) translateY(12px);
   background:#1f2933; color:#fff; padding:.8rem 1rem; border-radius:10px; max-width:90vw;
@@ -79,6 +96,11 @@ h2{ font-size:1.35rem; margin:0 0 .7rem; }
 .email-row input, .email-row select{ font:inherit; padding:.8rem .9rem; border:1px solid var(--c-line); border-radius:10px; min-height:48px; background:#fff; }
 .form-msg{ margin:.3rem 0 0; min-height:1.4em; }
 .form-msg.ok{ color:#065f46; } .form-msg.err{ color:#b91c1c; }
+/* 재방문(등록 완료) — 폼만 비활성, 스토어 버튼은 활성 유지 */
+.lead-done-note{ background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46;
+  border-radius:12px; padding:.8rem .9rem; margin:.2rem 0 1rem; font-weight:600; line-height:1.45; }
+.lead-form.is-done form{ opacity:.55; }
+.lead-form.is-done input, .lead-form.is-done select, .lead-form.is-done .btn-submit{ cursor:not-allowed; }
 .final{ text-align:center; }
 .final .btn-install{ max-width:340px; margin:.6rem auto 0; }
 .foot{ text-align:center; padding:1.6rem 1rem 2rem; color:var(--c-muted); font-size:.9rem; }
