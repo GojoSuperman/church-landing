@@ -13,6 +13,9 @@ node_modules/
 # 비주얼 컴패니언 (브레인스토밍 산출물)
 .superpowers/
 
+# bkit 플러그인 상태 폴더
+.bkit/
+
 # build / OS
 dist/
 .DS_Store
