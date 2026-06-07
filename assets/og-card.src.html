@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- 카톡/오픈그래프 공유용 대표 이미지(1200x630) 소스.
+     이 파일을 1200x630으로 캡처해 assets/img/og-card.png 로 저장한다. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{ --green:#2f6f4f; --green2:#3f8a63; --green-d:#163d2a; --gold:#ffe39a; }
+  *{ box-sizing:border-box; margin:0; padding:0; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body{ width:1200px; height:630px; }
+  .og{
+    position:relative; width:1200px; height:630px; overflow:hidden;
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+    color:#fff;
+    background:
+      radial-gradient(130% 120% at 88% 12%, rgba(255,255,255,.10), transparent 55%),
+      linear-gradient(150deg, var(--green2) 0%, var(--green) 46%, var(--green-d) 100%);
+  }
+  /* 은은한 장식 원 */
+  .og::before{ content:""; position:absolute; width:520px; height:520px; border-radius:50%;
+    top:-180px; left:-160px; background:radial-gradient(circle, rgba(255,255,255,.10), transparent 70%); }
+
+  .copy{ position:absolute; left:74px; top:0; height:100%; width:660px;
+    display:flex; flex-direction:column; justify-content:center; }
+
+  .pill{ display:inline-flex; align-items:center; gap:14px; align-self:flex-start;
+    background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28);
+    padding:11px 22px 11px 11px; border-radius:999px; margin-bottom:30px; }
+  .pill img{ width:54px; height:54px; border-radius:14px; background:#fff; }
+  .pill span{ font-size:25px; font-weight:700; letter-spacing:-.5px; }
+
+  h1{ font-size:88px; line-height:1.08; letter-spacing:-3px; font-weight:800;
+    text-shadow:0 4px 22px rgba(0,0,0,.18); }
+  h1 b{ color:var(--gold); }
+  .sub{ margin-top:26px; font-size:31px; font-weight:600; line-height:1.4;
+    color:rgba(255,255,255,.94); letter-spacing:-.6px; }
+
+  .tags{ margin-top:34px; display:flex; gap:12px; flex-wrap:wrap; }
+  .tags span{ background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.25);
+    padding:11px 20px; border-radius:12px; font-size:22px; font-weight:700; letter-spacing:-.4px; }
+
+  .store{ margin-top:38px; align-self:flex-start; display:inline-flex; align-items:center; gap:11px;
+    background:#fff; color:var(--green-d); font-size:25px; font-weight:800; letter-spacing:-.5px;
+    padding:16px 30px; border-radius:999px; box-shadow:0 12px 30px rgba(0,0,0,.22); }
+
+  /* 우측 폰 스크린샷 (살짝 기울임, 화면 밖으로 블리드) */
+  .phone{ position:absolute; right:-36px; bottom:-70px; width:386px;
+    border-radius:38px; overflow:hidden; transform:rotate(6deg);
+    box-shadow:0 40px 80px rgba(0,0,0,.40); border:9px solid #11271c; }
+  .phone img{ display:block; width:100%; }
+</style>
+</head>
+<body>
+  <div class="og">
+    <div class="copy">
+      <div class="pill"><img src="/assets/img/app-icon.png" alt=""><span>교회 재정 관리</span></div>
+      <h1>교회 재정,<br><b>쉽고 투명하게</b></h1>
+      <p class="sub">목사님과 회계 직분자를 위한<br>교회 전용 재정 관리 앱</p>
+      <div class="tags"><span>⛪ 한국 교회 특화</span><span>🔒 안전·투명</span><span>🆓 무료</span></div>
+      <div class="store">▶ Google Play 무료 설치</div>
+    </div>
+    <div class="phone"><img src="/assets/img/screen-main.png" alt=""></div>
+  </div>
+</body>
+</html>
